@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Xavier's College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: white;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover {
+            color: #1E90FF;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('fallback-image.jpg') no-repeat center center/cover;
+        }
+        .video-background video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .title-container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .title-container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+        .logo-button-container {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+        .logo-button-container img {
+            width: 120px;
+            border-radius: 10px;
+        }
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .title-container h1 { font-size: 35px; }
+            .modal-content { width: 80%; }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            background-color: white;
+            color: black;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+        .modal-content h2 {
+            color: #1E90FF;
+        }
+        .close {
+            color: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover { color: red; }
+    </style>
+    <script>
+        function showModal() {
+            document.getElementById("aboutModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("aboutModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById("aboutModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="https://videos.pexels.com/video-files/30120287/12918303_2560_1440_30fps.mp4" type="video/mp4">
+        </video>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#" onclick="showModal()">About</a>
+    </nav>
+    <div class="title-container">
+        <h1>St. Xavier's College</h1>
+        <p>"Dedicated to Excellence, Leadership, and Service."</p>
+    </div>
+    <div class="logo-button-container">
+        <img src="https://i.imghippo.com/files/QNh3051aM.png" alt="College Logo">
+        <a href="https://forms.gle/KroWpBZ54CAU9dbL6" class="button" target="_blank">Query and Feedback</a>
+    </div>
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>📢 Important Notice</h2>
+            <p>Hello everyone,</p>
+            <p>This form has been created to help you easily share your queries, concerns, and suggestions. Your feedback is important, and we will do our best to address your concerns as soon as possible. You can submit your responses at any time during our tenure. All submissions will be strictly confidential and carefully evaluated, and appropriate actions will be taken if necessary.</p>
+            <p><strong>Thank you for your support!</strong></p>
+            <p>Prajwol Shakya & Ipshika Shrestha</p>
+            <p><em>Class Representatives, B.B.S. 3rd Year (2022 Batch)</em></p>
+        </div>
+    </div>
+  
+
+</body>
+</html>
